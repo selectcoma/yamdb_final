@@ -1,10 +1,10 @@
 import datetime as dt
 
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 from django.core.validators import MaxLengthValidator
 from django.db import models
 from django.db.models import Avg, UniqueConstraint
-from django.core.exceptions import ValidationError
 
 User = get_user_model()
 
