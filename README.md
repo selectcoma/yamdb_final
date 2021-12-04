@@ -1,6 +1,12 @@
 ![Yamdb workflow](https://github.com/selectcoma/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
 
+
 **API for YAMDB service**
+
+*Important URLS:*
+- Documentation `178.154.198.217/redoc`
+- API `178.154.198.217/api/v1`
+- Admin site `178.154.198.217/admin`
 
 YAMDB collects user reviews for different  categories of items like books, movies, music, etc.
 
@@ -43,5 +49,5 @@ An example of initializing start data:
 
 To work with the API please refer to the documentation available in your browser at
 
-`127.0.0.1/redoc`
+
 
