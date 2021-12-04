@@ -31,15 +31,6 @@ services:
     depends_on:
       - web
 
-  migrationstatic:
-    build: .
-    image: app
-    command: bash -c 'python manage.py migrate && yes yes | python manage.py collectstatic'
-    volumes:
-      - .:/app
-    depends_on:
-      - web
-
 volumes:
   postgres_data:
   static_value:
