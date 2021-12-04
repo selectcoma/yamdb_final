@@ -18,6 +18,10 @@ services:
       - db
     env_file:
       - ./.env
+    command: bash -c 'python manage.py makemigrations &&
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
+      gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000'
 
   nginx:
     image: nginx:1.19.3
@@ -28,18 +32,6 @@ services:
       - static_value:/var/html/static/
       - media_value:/var/html/media/
 
-    depends_on:
-      - web
-
-  migrationstatic:
-    build: .
-    image: app
-    command:  bash -c 'python manage.py makemigrations &&
-              python manage.py migrate &&
-              yes yes | python manage.py collectstatic'
-
-    volumes:
-      - .:/app
     depends_on:
       - web
 
