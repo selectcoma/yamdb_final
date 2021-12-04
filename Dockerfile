@@ -1,11 +1,11 @@
 FROM python:3.8.5
 
-WORKDIR /code
+WORKDIR /app
 
-COPY requirements.txt /code
+COPY requirements.txt /app
 
-RUN pip3 install -r /code/requirements.txt
+RUN pip3 install -r /app/requirements.txt
 
-COPY . /code
+COPY . /app
 
 CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
